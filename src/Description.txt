@@ -1,0 +1,3 @@
+ This folder should contain the project code. 
+ If there are multiple sub projects, you are encouraged to create multiple folders within this folder.
+
