@@ -1,0 +1,2 @@
+This folder will store any design documents generated automatically from the project using a code documentation generation tool. 
+It will also include ERD Diagram, Wireframes and APA formatted project report.
