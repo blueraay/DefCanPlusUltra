@@ -1,0 +1,2 @@
+This folder contains final software artefact(s) 
+(eg. exe/jar/html/css)
