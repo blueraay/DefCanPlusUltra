@@ -30,5 +30,10 @@ namespace DefCan.Models
         [StringLength(2048)]
         public string Audio { get; set; }
 
+        //public Nullable<float> CustBalance { get; set; } //Added To hold total balance
     }
+
+
+
+
 }

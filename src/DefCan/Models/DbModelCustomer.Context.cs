@@ -12,19 +12,19 @@ namespace DefCan.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+
     public partial class DbModelCustomers : DbContext
     {
         public DbModelCustomers()
             : base("name=DbModelCustomers")
         {
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
         public virtual DbSet<Customer> Customers { get; set; }
     }
 }

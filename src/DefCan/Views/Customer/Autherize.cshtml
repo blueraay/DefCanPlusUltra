@@ -1,7 +1,8 @@
 ﻿@model DefCan.Models.Customer
 
 @{
-    ViewBag.Title = "Autherize";
+   ViewBag.Title = "Autherize";
+
 }
 
 <!DOCTYPE html>
@@ -11,8 +12,7 @@
     <meta name="viewport" content="width=device-width" />
     <title> Login </title>
     <style>
-        #login-div
-        {
+        #login-div {
             position: absolute;
             left: 40%;
             top: 40%;
@@ -24,43 +24,51 @@
 
 <body>
     <div id="login-div">
-        @using (Html.BeginForm(FormMethod.Post))
+        @using (Html.BeginForm("Autherize", "Customer", FormMethod.Post))
         {
-            <table>
-                <tr>
-                    <td></td>
-                    <td style="text-decoration:underline"> Def Can Coffee </td>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.LabelFor(Model => Model.EmailAddress)
-                    </td>
-                    <td>
-                        @Html.EditorFor(Model => Model.EmailAddress)
-                    </td>
-                </tr>
-                <tr>
-                    <td> @Html.LabelFor(Model => Model.Password) </td>
-                    <td> @Html.EditorFor(Model => Model.Password) </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <label class="field-validation-error">
-                            @Html.DisplayFor(Model => Model.LoginErrorMessage)
-                        </label>
-                    </td>
-                </tr>
+        <table>
+            <tr>
+                <td></td>
+                <td style="text-decoration:underline"> C.U.P.S </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.EmailAddress)
 
-                <tr>
-                    <td>  </td>
-                    <td>
-                        <input type="submit" name="name" value="Login" />
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.EmailAddress)
 
-                    </td>
-                </tr>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Password)
+
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.Password)
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label class="field-validation-error">
+                        @*  @Html.DisplayFor(model => model.LoginErrorMessage) *@
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>  </td>
+                <td>
+                    <input type="submit" name="name" value="Login" />
+
+                </td>
+            </tr>
 
 
-            </table>
+        </table>
         }
     </div>
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
