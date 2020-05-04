@@ -1,0 +1,55 @@
+﻿@model DefCan.Models.Item
+
+@{
+    ViewBag.Title = "invoice";
+}
+
+<h2>invoice</h2>
+
+@using DefCan.Controllers
+<table cellpadding="2" cellspacing="2" border="1">
+    <tr>
+       @* <th> Option </th> *@
+        <th> Name </th>
+        <th> Cost </th>
+        <th> Category </th>
+        <th> Quantity </th>
+        <th> Sub Total </th>
+    </tr>
+
+    @{
+
+        double grandTotal = 0;
+    }
+
+    @foreach (var OrderedItem in (List<OrderedItem>)Session["Invoice"])
+    {
+        double SubTotal = Convert.ToDouble(OrderedItem.Quantity) * Convert.ToDouble(OrderedItem.Item.Cost);
+        grandTotal += SubTotal;
+
+
+        <tr>
+            <td>  @OrderedItem.Item.Name </td>
+            <td> @OrderedItem.Item.Cost </td>
+            <td> @OrderedItem.Item.Category </td>
+            <td> @OrderedItem.Quantity </td>
+            <td> @(OrderedItem.Item.Cost * OrderedItem.Quantity) </td>
+            <td> @Html.ActionLink("Delete","Delete", "Order", new { id = OrderedItem.Item.ItemID}, null) </td>
+        </tr>
+    }
+    <tr>
+        <td align="right" colspan="5"> Sum </td>
+        <td> @Math.Round(grandTotal, 2) </td>
+    </tr>
+    </table>
+
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Checkout" class="btn btn-default" />
+    </div>
+</div>
+
+<br /> 
+@Html.ActionLink("Checkout","Checkout","Order")
+@Html.ActionLink("Continue Shopping", "Index", "Order")
