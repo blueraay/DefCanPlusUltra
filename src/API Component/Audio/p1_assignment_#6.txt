@@ -1,0 +1,48 @@
+Declare S_Tour,R_Tour,J_Tour,Cust_ID,Choice as integers
+Declare C_Name as string
+Declare Total,avg_cost as float
+
+
+S_Tour=119
+R_Tour=139
+J_Tour=149
+Total=0
+count=0
+while (count<15) 
+{
+count++
+print("Enter customers i.d")
+read(Cust_ID)
+print("Enter customers name")
+read(C_Name)
+
+print("Enter 1 for Scenic Tour, Enter 2 for Relaxation Tour and Enter 3 for Joyous Fun Tour")
+read(choice)
+
+if(choice==1)
+{
+Total=Total+S_Tour
+}
+
+if (choice==2)
+{
+Total= Total + R_Tour
+}
+
+if (choice==3)
+{
+Total= Total + J_Tour
+}
+
+if (Choice>3 or choice<0)
+{
+print ("Incorrect input, please try again")
+count=count-1
+}
+
+avg_cost=Total/15
+
+print("The overall total cost is", Total)
+print("The average cost per customer is", avg_cost)
+
+}
