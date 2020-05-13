@@ -1,0 +1,106 @@
+﻿@model DefCan.Models.Customer
+
+@{
+    ViewBag.Title = "Autherize7";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title> Login </title>
+    <style>
+        #home-div1
+    {
+        position: absolute;
+            right: 90%;
+            bottom: 20%;
+    }
+
+        #login-div {
+            position: absolute;
+            right: 70%;
+            top: 40%;
+            border: 1px solid #ccc;
+            padding: 10px 10px;
+        }
+        body {
+            @*background-image: url("");*@
+                background-image: url("https://previews.123rf.com/images/lisaalisaill/lisaalisaill1902/lisaalisaill190200197/124960698-coffee-concept-on-wooden-background-white-coffee-cup-top-view-with-doodle-illustration-about-coffee-.jpg");
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="login-div">
+        @using (Html.BeginForm("Autherize7", "Customer", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+
+            <fieldset>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.AudioID)
+                    @* @Html.EditorFor(model => model.AudioID) *@
+                </div>
+                <div class="editor-field">
+                    <input id="AudioID" title="Upload a product image" type="file" name="file4" />
+                </div>
+            </fieldset>
+            <table>
+                <tr>
+                    <td></td>
+                    <td style="text-decoration:underline"> C.U.P.S </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.EmailAddress)
+
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.EmailAddress)
+
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td colspan="2">
+                        <label class="field-validation-error">
+                            @*  @Html.DisplayFor(model => model.LoginErrorMessage) *@
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>  </td>
+                    <td>
+                        <input type="submit" name="name" value="Login" />
+
+                    </td>
+                </tr>
+
+
+            </table>
+
+        }
+    </div>
+
+    <div id=home-div1>
+        @Html.ActionLink("Back", "Autherize", "Customer", new { @class = "btn btn-primary btn-large" })
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+
+
+</html>
+
+
+
+<h2>Login With Audio</h2>
+

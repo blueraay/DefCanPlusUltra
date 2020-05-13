@@ -1,0 +1,48 @@
+﻿@model IEnumerable<DefCan.Models.Item>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    #SignOut {
+        position: absolute;
+        left: 80%;
+        
+    }
+</style>
+<h2> Menu </h2>
+<p id="SignOut"> @Html.RouteLink("Signout", new { controller = "Customer", action = "Autherize" }, new { @class = "btn btn-primary btn-small" } ) </p>
+@* <div> @Html.ActionLink("Search","Search", "Item", new { @class = "btn btn-primary btn-small" }) </div> *@
+<div> @Html.RouteLink("Search", new { controller = "Item", action = "Search"}, new { @class = "btn btn-primary btn-small" })  </div>
+<div> @Html.RouteLink("Search by Sign Language Image", new { controller = "Item", action = "Search3" }, new { @class = "btn btn-primary btn-small" })  </div>
+<div> @Html.RouteLink("Search by Audio", new { controller = "Item", action = "Search4" }, new { @class = "btn btn-primary btn-small" })  </div>
+
+
+<table class="table table-bordered table-responsive table-hover" @* cellpadding="2" cellspacing="5" border="1" *@>
+    
+    <tr>
+        <th> Name </th>
+        <th> Cost </th>
+        <th> Category </th>
+        <th> Item Picture </th>
+        <th> ASL Representation</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td> @item.Name </td>
+            <td> @item.Cost </td>
+            <td> @item.Category </td>
+            <td>
+                <img src="~/Images/@Html.DisplayFor(modelItem => item.PicUrl)" style="height:150px;width:150px;" />
+
+                @*@item.PicUrl*@
+            </td>
+            <td> <img src="~/Images/@Html.DisplayFor(modelItem => item.AslPicUrl)" style="height:150px;width:150px;" /> </td>
+            <td> <audio src="~/Audio/@Html.DisplayFor(modelItem => item.Audio)" controls>  </audio> </td>
+            <td align="center">@Html.ActionLink("Order", "Order", new { id = item.ItemID }, null) </td>
+
+        </tr>
+    }
+</table>

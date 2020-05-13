@@ -1,0 +1,114 @@
+﻿@model IEnumerable<DefCan.Models.Item>
+
+@{
+    ViewBag.Title = "Search3";
+}
+
+<h2>Search by image</h2>
+
+<style>
+    #SignOut {
+        position: absolute;
+        left: 80%;
+    }
+</style>
+<p id="SignOut"> @Html.RouteLink("Signout", new { controller = "Customer", action = "Autherize" }, new { @class = "btn btn-primary btn-small" }) </p>
+
+
+@* <form asp-controller="Item" asp-action="Search3" new { enctype = "multipart/form-data" }>
+        <p>
+
+            <input id="AslPicUrl" title="Upload an image to search" type="file" name="file9" />
+            @* Enter ASL Image name displayed above: <input type="text" name="SearchString">
+            <input type="submit" value="Search image" />
+
+        </p>
+    </form> *@
+
+@using (Html.BeginForm("Search3", "Item", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <fieldset>
+
+        <div class="editor-field">
+            <input id="AslPicUrl" title="Upload a product image" type="file" name="file9" />
+        </div>
+    </fieldset>
+
+    <td>
+        <input type="submit" name="Search Image" value="Search Image" />
+
+    </td>
+}
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StockQty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PicUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AslPicUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Audio)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StockQty)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Cost)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Category)
+    </td>
+    <td>
+        @* @Html.DisplayFor(modelItem => item.PicUrl) *@
+        <img src="~/Images/@Html.DisplayFor(modelItem => item.PicUrl)" style="height:150px;width:150px;" />
+    </td>
+    <td>
+        @* @Html.DisplayFor(modelItem => item.AslPicUrl) *@
+        <img src="~/Images/@Html.DisplayFor(modelItem => item.AslPicUrl)" style="height:150px;width:150px;" />
+    </td>
+    <td>
+        @* @Html.DisplayFor(modelItem => item.Audio) *@
+        <audio src="~/Audio/@Html.DisplayFor(modelItem => item.Audio)" controls>  </audio>
+    </td>
+    <td>
+        @*  @Html.ActionLink("Edit", "Edit", new { id=item.ItemID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ItemID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ItemID }) *@
+    </td>
+
+  @*  <td align="center">@Html.ActionLink("Order", "Order", new { id = item.ItemID }, null) </td> *@
+
+</tr>
+    }
+
+
+</table>
+@* @Html.ActionLink("Place Order", "Index", "Order", new { @class = "btn btn-primary btn-small" }) *@
+
+@Html.RouteLink("Place Order", new { controller = "Order", action = "Index" }, new { @class = "btn btn-primary btn-small" })
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
