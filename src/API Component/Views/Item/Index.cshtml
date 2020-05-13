@@ -1,0 +1,89 @@
+﻿@model IEnumerable<DefCan.Models.Item>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Manager's Interface </h2>
+
+<style>
+    #SignOut {
+        position: absolute;
+        left: 80%;
+    }
+</style>
+<p id="SignOut"> @Html.RouteLink("Signout", new { controller = "Customer", action = "Autherize" }, new { @class = "btn btn-primary btn-small" }) </p>
+
+<p>
+    @*@Html.ActionLink("Create New Menu Item", "Create", new { @class = "btn btn-primary btn-small" })*@
+    @Html.RouteLink("Create New Menu Item", new { controller = "Item", action = "Create" }, new { @class = "btn btn-primary btn-small" })
+</p>
+<p>
+   @* @Html.ActionLink("Access Sales Chart", "ChartFromEF", new { @class = "btn btn-primary btn-small" }) *@
+    @Html.RouteLink("Access Sales Chart", new { controller = "Item", action = "ChartFromEF" }, new { @class = "btn btn-primary btn-small" })
+</p>
+<table class="table table-bordered table-responsive table-hover" @*class="table"*@>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StockQty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PicUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AslPicUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Audio)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StockQty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+
+                @* @Html.DisplayFor(modelItem => item.PicUrl) *@
+                <img src="~/Images/@Html.DisplayFor(modelItem => item.PicUrl)" style="height:150px;width:150px;" />
+
+            </td>
+            <td>
+                @* @Html.DisplayFor(modelItem => item.AslPicUrl) *@
+                <img src="~/Images/@Html.DisplayFor(modelItem => item.AslPicUrl)" style="height:150px;width:150px;" />
+            </td>
+            <td>
+                @* @Html.DisplayFor(modelItem => item.Audio) *@
+                @* <audio src="~/Audio/@Html.DisplayFor(modelItem => item.Audio)" type="mp4" /> *@
+                <audio src="~/Audio/@Html.DisplayFor(modelItem => item.Audio)" controls>  </audio>
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ItemID }) |
+                @*  @Html.ActionLink("Details", "Details", new { id=item.ItemID }) | *@
+                @Html.ActionLink("Delete", "Delete", new { id = item.ItemID })
+            </td>
+        </tr>
+    }
+
+</table>

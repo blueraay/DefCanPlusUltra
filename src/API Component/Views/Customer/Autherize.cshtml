@@ -1,0 +1,134 @@
+﻿@model DefCan.Models.Customer
+
+@{
+    ViewBag.Title = "Autherize";
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title> Login </title>
+    <style>
+        #home-div1
+    {
+        position: absolute;
+            right: 90%;
+            bottom: 20%;
+    }
+        #home-div2 {
+            position: absolute;
+            left: 80%;
+            bottom: 20%
+        }
+
+        #home-div3 {
+            position: absolute;
+            left: 30%;
+            bottom: 20%
+        }
+
+        #home-div4 {
+            position: absolute;
+            left: 60%;
+            bottom: 20%
+        }
+
+        #login-div {
+            position: absolute;
+            right: 70%;
+            top: 40%;
+            border: 1px solid #ccc;
+            padding: 10px 10px;
+            font-weight: 900;
+        }
+        body {
+            @*background-image: url("");*@
+                background-image: url("https://previews.123rf.com/images/lisaalisaill/lisaalisaill1902/lisaalisaill190200197/124960698-coffee-concept-on-wooden-background-white-coffee-cup-top-view-with-doodle-illustration-about-coffee-.jpg");
+
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div id="login-div">
+        @using (Html.BeginForm("Autherize", "Customer", FormMethod.Post, new { id = Model.CustomerID })) //Added the new id
+        {
+            <table>
+                <tr>
+                    <td></td>
+                    <td style="text-decoration:underline"> C.U.P.S </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.EmailAddress)
+
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.EmailAddress)
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.Password)
+
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.Password)
+
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label class="field-validation-error">
+                            @*  @Html.DisplayFor(model => model.LoginErrorMessage)  *@
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>  </td>
+                    <td>
+                        <input type="submit" name="name" value="Login" />
+
+                    </td>
+                </tr>
+
+
+            </table>
+        }
+    </div>
+
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+
+
+</html>
+
+<div id="home-div1">
+@Html.ActionLink("Sign Up", "Create", "Customer", new { @class = "btn btn-primary btn-large" })
+</div>
+
+<div id="home-div3">
+    @Html.ActionLink("Login With Image", "Autherize3", "Customer", new { @class = "btn btn-primary btn-large" })
+</div>
+
+<div id="home-div4">
+    @Html.ActionLink("Login With Audio","Autherize7", "Customer", new { @class = "btn btn-primary btn-large" })
+</div>
+
+<div id="home-div2">
+    @Html.ActionLink("Manager", "Autherize4", "Customer", new { @class = "btn btn-primary btn-large" })
+</div>
+
+
+@*<h2>Autherize</h2>*@
+

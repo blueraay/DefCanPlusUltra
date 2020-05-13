@@ -1,0 +1,79 @@
+﻿@model IEnumerable<DefCan.Models.Item>
+
+<style>
+    #SignOut {
+        position: absolute;
+        left: 80%;
+    }
+</style>
+<p id="SignOut"> @Html.RouteLink("Signout", new { controller = "Customer", action = "Autherize" }, new { @class = "btn btn-primary btn-small" }) </p>
+
+<center>
+    @using (Html.BeginForm("Search2", "Item", FormMethod.Get))
+    {
+        <span> Enter Item Name: </span> <input type="text" name="searcher" placeholder="Enter Item Name" />
+        <input type="submit" value="Search" name="submit" />
+    }
+
+</center>
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StockQty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PicUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AslPicUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Audio)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StockQty)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Cost)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Category)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PicUrl)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AslPicUrl)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Audio)
+    </td>
+
+   @* <td align="center">@Html.ActionLink("Order", "Order", new { id = item.ItemID }, null) </td> *@
+    @*  <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ItemID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ItemID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ItemID })
+        </td> *@
+</tr>
+    }
+
+</table>

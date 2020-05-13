@@ -1,0 +1,83 @@
+﻿@model DefCan.Models.Item
+
+
+@{
+    ViewBag.Title = "Invoice";
+}
+
+<h2> Order Invoice</h2>
+
+@using DefCan.Controllers
+<table class="table table-bordered table-responsive table-hover" @*cellpadding="2" cellspacing="2" border="1"*@>
+    <tr>
+        @* <th> Option </th> *@
+        <th> Name </th>
+        <th> Cost </th>
+        <th> Category </th>
+        <th> Quantity </th>
+        <th> Sub Total </th>
+    </tr>
+
+    @{
+
+        double grandTotal = 0;
+        //int id;
+        //id = Int32 Session["ID"];
+        //int id = Session["CustomerID"];
+    }
+
+    @foreach (var OrderedItem in (List<OrderedItem>)Session["Invoice"])
+    {
+        double SubTotal = Convert.ToDouble(OrderedItem.Quantity) * Convert.ToDouble(OrderedItem.Item.Cost);
+        grandTotal += SubTotal;
+
+        //OrderedItem.Item.CustBalance = (float)(grandTotal);
+
+        <tr>
+            <td>  @OrderedItem.Item.Name </td>
+            <td> @OrderedItem.Item.Cost </td>
+            <td> @OrderedItem.Item.Category </td>
+            <td> @OrderedItem.Quantity </td>
+            <td> @(OrderedItem.Item.Cost * OrderedItem.Quantity) </td>
+            <td> @Html.ActionLink("Delete", "Delete", "Order", new { id = OrderedItem.Item.ItemID }, null) </td>
+        </tr>
+    }
+    <tr>
+        <td align="right" colspan="5"> Sum </td>
+        <td> @Math.Round(grandTotal, 2) </td>
+
+    </tr>
+</table>
+@*System.Web.HttpContext.Current.Session["MyValue"] = user.SessionID;
+    Session["grandTotal"].Tostring = grandTotal;*@
+
+
+<div>
+    <div class="col-md-offset-2 col-md-10">
+        @*  <input type="submit" value="Checkout" class="btn btn-default" /> *@
+
+        @*
+            @Html.ActionLink("Checkout using password", "Autherize2", "Customer", new { @class = "btn btn-primary btn-small" }); @* Delete { if fails} *@
+        @* @Html.ActionLink("Checkout using Picture Id", "Autherize6", "Customer", new { @class = "btn btn-primary btn-small" });
+            @Html.ActionLink("Checkout using Audio", "Autherize8", "Customer", new { @class = "btn btn-primary btn-small" }); @* Delete { if fails} *@
+
+
+
+        @Html.RouteLink("Checkout Using Password", new { controller = "Customer", action = "Autherize2" }, new { @class = "btn btn-primary btn-small" })
+        @Html.RouteLink("Checkout Using Picture ID", new { controller = "Customer", action = "Autherize6" }, new { @class = "btn btn-primary btn-small" })
+        @Html.RouteLink("Checkout Using Audio", new { controller = "Customer", action = "Autherize8" }, new { @class = "btn btn-primary btn-small" })
+
+    </div>
+</div>
+
+<br />
+<br />
+@* @Html.ActionLink("Checkout", "Checkout", "Order") *@
+@Html.ActionLink("Continue Shopping", "Index", "Order", new { @class = "btn btn-primary btn-small" })
+@* @Html.ActionLink("Cancel Order", "Autherize", "Customer", new { @class = "btn btn-primary btn-small" }) *@
+
+@Html.RouteLink("Cancel Order", new { controller = "Customer", action = "Autherize" }, new { @class = "btn btn-primary btn-small" })
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

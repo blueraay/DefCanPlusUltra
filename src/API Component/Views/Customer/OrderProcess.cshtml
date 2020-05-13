@@ -1,0 +1,15 @@
+﻿@model DefCan.Models.Customer
+
+<style>
+    #OrderUP {
+        font-size: large
+    }
+</style>
+
+
+
+<p id="OrderUP">
+    Your order was successful!
+</p>
+
+@Html.RouteLink("Press to Exit", new { controller = "Customer", action = "Autherize" }, new { @class = "btn btn-primary btn-small" })
