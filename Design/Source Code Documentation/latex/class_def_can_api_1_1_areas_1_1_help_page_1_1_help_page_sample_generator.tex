@@ -1,0 +1,287 @@
+\hypertarget{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator}{}\doxysection{Def\+Can\+Api.\+Areas.\+Help\+Page.\+Help\+Page\+Sample\+Generator Class Reference}
+\label{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator}\index{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}}
+
+
+This class will generate the samples for the help page.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a97fcb1ea3f4800f505a998badf2bcef0}{Help\+Page\+Sample\+Generator}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator}{Help\+Page\+Sample\+Generator}} class. \end{DoxyCompactList}\item 
+I\+Dictionary$<$ Media\+Type\+Header\+Value, object $>$ \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_ae4f7e3d6c5bc2e22efbfaee79c8bff6b}{Get\+Sample\+Requests}} (Api\+Description api)
+\begin{DoxyCompactList}\small\item\em Gets the request body samples for a given Api\+Description. \end{DoxyCompactList}\item 
+I\+Dictionary$<$ Media\+Type\+Header\+Value, object $>$ \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_afe8a1ed4307aa9c2dd1b7749a09e7f06}{Get\+Sample\+Responses}} (Api\+Description api)
+\begin{DoxyCompactList}\small\item\em Gets the response body samples for a given Api\+Description. \end{DoxyCompactList}\item 
+virtual I\+Dictionary$<$ Media\+Type\+Header\+Value, object $>$ \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_aff399c4605e8176c3ff415a81cdd7b37}{Get\+Sample}} (Api\+Description api, \mbox{\hyperlink{namespace_def_can_api_1_1_areas_1_1_help_page_a421c21d871860512d0b8c01c90628752}{Sample\+Direction}} sample\+Direction)
+\begin{DoxyCompactList}\small\item\em Gets the request or response body samples. \end{DoxyCompactList}\item 
+virtual object \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a0d1a023a1b0ee5155d7a02e75dbbacae}{Get\+Action\+Sample}} (string controller\+Name, string action\+Name, I\+Enumerable$<$ string $>$ parameter\+Names, Type type, Media\+Type\+Formatter formatter, Media\+Type\+Header\+Value media\+Type, \mbox{\hyperlink{namespace_def_can_api_1_1_areas_1_1_help_page_a421c21d871860512d0b8c01c90628752}{Sample\+Direction}} sample\+Direction)
+\begin{DoxyCompactList}\small\item\em Search for samples that are provided directly through \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a4a2bf8f67af352deb9e0347add8ddfc4}{Action\+Samples}}. \end{DoxyCompactList}\item 
+virtual object \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a63f8e638a83d9585bcfbf2496cf300bd}{Get\+Sample\+Object}} (Type type)
+\begin{DoxyCompactList}\small\item\em Gets the sample object that will be serialized by the formatters. First, it will look at the \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a2e1aad2fe0429ff435860f7b11a964fa}{Sample\+Objects}}. If no sample object is found, it will try to create one using Default\+Sample\+Object\+Factory (which wraps an \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_object_generator}{Object\+Generator}}) and other factories in \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_abbd08cb38fb8619c61ddfd52db2a0f8d}{Sample\+Object\+Factories}}. \end{DoxyCompactList}\item 
+virtual Type \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a733e10cb9cc62ab4c7f74de215ecbfd8}{Resolve\+Http\+Request\+Message\+Type}} (Api\+Description api)
+\begin{DoxyCompactList}\small\item\em Resolves the actual type of System.\+Net.\+Http.\+Object\+Content$<$\+T$>$ passed to the System.\+Net.\+Http.\+Http\+Request\+Message in an action. \end{DoxyCompactList}\item 
+virtual Type \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_acbf7f9712c9e693c1a91fa57d5bebc11}{Resolve\+Type}} (Api\+Description api, string controller\+Name, string action\+Name, I\+Enumerable$<$ string $>$ parameter\+Names, \mbox{\hyperlink{namespace_def_can_api_1_1_areas_1_1_help_page_a421c21d871860512d0b8c01c90628752}{Sample\+Direction}} sample\+Direction, out Collection$<$ Media\+Type\+Formatter $>$ formatters)
+\begin{DoxyCompactList}\small\item\em Resolves the type of the action parameter or return value when Http\+Request\+Message or Http\+Response\+Message is used. \end{DoxyCompactList}\item 
+virtual object \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a35b9b050a7bc211f3f4265acd7e27f3b}{Write\+Sample\+Object\+Using\+Formatter}} (Media\+Type\+Formatter formatter, object value, Type type, Media\+Type\+Header\+Value media\+Type)
+\begin{DoxyCompactList}\small\item\em Writes the sample object using formatter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+I\+Dictionary$<$ \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_key}{Help\+Page\+Sample\+Key}}, Type $>$ \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_ae0af09c1304a93dd21c029a0c1365909}{Actual\+Http\+Message\+Types}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets C\+LR types that are used as the content of Http\+Request\+Message or Http\+Response\+Message. \end{DoxyCompactList}\item 
+I\+Dictionary$<$ \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_key}{Help\+Page\+Sample\+Key}}, object $>$ \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a4a2bf8f67af352deb9e0347add8ddfc4}{Action\+Samples}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the objects that are used directly as samples for certain actions. \end{DoxyCompactList}\item 
+I\+Dictionary$<$ Type, object $>$ \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a2e1aad2fe0429ff435860f7b11a964fa}{Sample\+Objects}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the objects that are serialized as samples by the supported formatters. \end{DoxyCompactList}\item 
+I\+List$<$ Func$<$ \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator}{Help\+Page\+Sample\+Generator}}, Type, object $>$ $>$ \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_abbd08cb38fb8619c61ddfd52db2a0f8d}{Sample\+Object\+Factories}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets factories for the objects that the supported formatters will serialize as samples. Processed in order, stopping when the factory successfully returns a non-\/ object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class will generate the samples for the help page. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a97fcb1ea3f4800f505a998badf2bcef0}\label{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a97fcb1ea3f4800f505a998badf2bcef0}} 
+\index{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}!HelpPageSampleGenerator@{HelpPageSampleGenerator}}
+\index{HelpPageSampleGenerator@{HelpPageSampleGenerator}!DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}}
+\doxysubsubsection{\texorpdfstring{HelpPageSampleGenerator()}{HelpPageSampleGenerator()}}
+{\footnotesize\ttfamily Def\+Can\+Api.\+Areas.\+Help\+Page.\+Help\+Page\+Sample\+Generator.\+Help\+Page\+Sample\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator}{Help\+Page\+Sample\+Generator}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a0d1a023a1b0ee5155d7a02e75dbbacae}\label{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a0d1a023a1b0ee5155d7a02e75dbbacae}} 
+\index{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}!GetActionSample@{GetActionSample}}
+\index{GetActionSample@{GetActionSample}!DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}}
+\doxysubsubsection{\texorpdfstring{GetActionSample()}{GetActionSample()}}
+{\footnotesize\ttfamily virtual object Def\+Can\+Api.\+Areas.\+Help\+Page.\+Help\+Page\+Sample\+Generator.\+Get\+Action\+Sample (\begin{DoxyParamCaption}\item[{string}]{controller\+Name,  }\item[{string}]{action\+Name,  }\item[{I\+Enumerable$<$ string $>$}]{parameter\+Names,  }\item[{Type}]{type,  }\item[{Media\+Type\+Formatter}]{formatter,  }\item[{Media\+Type\+Header\+Value}]{media\+Type,  }\item[{\mbox{\hyperlink{namespace_def_can_api_1_1_areas_1_1_help_page_a421c21d871860512d0b8c01c90628752}{Sample\+Direction}}}]{sample\+Direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Search for samples that are provided directly through \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a4a2bf8f67af352deb9e0347add8ddfc4}{Action\+Samples}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller\+Name} & Name of the controller.\\
+\hline
+{\em action\+Name} & Name of the action.\\
+\hline
+{\em parameter\+Names} & The parameter names.\\
+\hline
+{\em type} & The C\+LR type.\\
+\hline
+{\em formatter} & The formatter.\\
+\hline
+{\em media\+Type} & The media type.\\
+\hline
+{\em sample\+Direction} & The value indicating whether the sample is for a request or for a response.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sample that matches the parameters.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_aff399c4605e8176c3ff415a81cdd7b37}\label{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_aff399c4605e8176c3ff415a81cdd7b37}} 
+\index{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}!GetSample@{GetSample}}
+\index{GetSample@{GetSample}!DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}}
+\doxysubsubsection{\texorpdfstring{GetSample()}{GetSample()}}
+{\footnotesize\ttfamily virtual I\+Dictionary$<$Media\+Type\+Header\+Value, object$>$ Def\+Can\+Api.\+Areas.\+Help\+Page.\+Help\+Page\+Sample\+Generator.\+Get\+Sample (\begin{DoxyParamCaption}\item[{Api\+Description}]{api,  }\item[{\mbox{\hyperlink{namespace_def_can_api_1_1_areas_1_1_help_page_a421c21d871860512d0b8c01c90628752}{Sample\+Direction}}}]{sample\+Direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the request or response body samples. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em api} & The Api\+Description.\\
+\hline
+{\em sample\+Direction} & The value indicating whether the sample is for a request or for a response.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The samples keyed by media type.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a63f8e638a83d9585bcfbf2496cf300bd}\label{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a63f8e638a83d9585bcfbf2496cf300bd}} 
+\index{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}!GetSampleObject@{GetSampleObject}}
+\index{GetSampleObject@{GetSampleObject}!DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}}
+\doxysubsubsection{\texorpdfstring{GetSampleObject()}{GetSampleObject()}}
+{\footnotesize\ttfamily virtual object Def\+Can\+Api.\+Areas.\+Help\+Page.\+Help\+Page\+Sample\+Generator.\+Get\+Sample\+Object (\begin{DoxyParamCaption}\item[{Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the sample object that will be serialized by the formatters. First, it will look at the \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a2e1aad2fe0429ff435860f7b11a964fa}{Sample\+Objects}}. If no sample object is found, it will try to create one using Default\+Sample\+Object\+Factory (which wraps an \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_object_generator}{Object\+Generator}}) and other factories in \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_abbd08cb38fb8619c61ddfd52db2a0f8d}{Sample\+Object\+Factories}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sample object.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_ae4f7e3d6c5bc2e22efbfaee79c8bff6b}\label{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_ae4f7e3d6c5bc2e22efbfaee79c8bff6b}} 
+\index{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}!GetSampleRequests@{GetSampleRequests}}
+\index{GetSampleRequests@{GetSampleRequests}!DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}}
+\doxysubsubsection{\texorpdfstring{GetSampleRequests()}{GetSampleRequests()}}
+{\footnotesize\ttfamily I\+Dictionary$<$Media\+Type\+Header\+Value, object$>$ Def\+Can\+Api.\+Areas.\+Help\+Page.\+Help\+Page\+Sample\+Generator.\+Get\+Sample\+Requests (\begin{DoxyParamCaption}\item[{Api\+Description}]{api }\end{DoxyParamCaption})}
+
+
+
+Gets the request body samples for a given Api\+Description. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em api} & The Api\+Description.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The samples keyed by media type.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_afe8a1ed4307aa9c2dd1b7749a09e7f06}\label{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_afe8a1ed4307aa9c2dd1b7749a09e7f06}} 
+\index{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}!GetSampleResponses@{GetSampleResponses}}
+\index{GetSampleResponses@{GetSampleResponses}!DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}}
+\doxysubsubsection{\texorpdfstring{GetSampleResponses()}{GetSampleResponses()}}
+{\footnotesize\ttfamily I\+Dictionary$<$Media\+Type\+Header\+Value, object$>$ Def\+Can\+Api.\+Areas.\+Help\+Page.\+Help\+Page\+Sample\+Generator.\+Get\+Sample\+Responses (\begin{DoxyParamCaption}\item[{Api\+Description}]{api }\end{DoxyParamCaption})}
+
+
+
+Gets the response body samples for a given Api\+Description. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em api} & The Api\+Description.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The samples keyed by media type.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a733e10cb9cc62ab4c7f74de215ecbfd8}\label{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a733e10cb9cc62ab4c7f74de215ecbfd8}} 
+\index{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}!ResolveHttpRequestMessageType@{ResolveHttpRequestMessageType}}
+\index{ResolveHttpRequestMessageType@{ResolveHttpRequestMessageType}!DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}}
+\doxysubsubsection{\texorpdfstring{ResolveHttpRequestMessageType()}{ResolveHttpRequestMessageType()}}
+{\footnotesize\ttfamily virtual Type Def\+Can\+Api.\+Areas.\+Help\+Page.\+Help\+Page\+Sample\+Generator.\+Resolve\+Http\+Request\+Message\+Type (\begin{DoxyParamCaption}\item[{Api\+Description}]{api }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Resolves the actual type of System.\+Net.\+Http.\+Object\+Content$<$\+T$>$ passed to the System.\+Net.\+Http.\+Http\+Request\+Message in an action. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em api} & The Api\+Description.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The type.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_acbf7f9712c9e693c1a91fa57d5bebc11}\label{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_acbf7f9712c9e693c1a91fa57d5bebc11}} 
+\index{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}!ResolveType@{ResolveType}}
+\index{ResolveType@{ResolveType}!DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}}
+\doxysubsubsection{\texorpdfstring{ResolveType()}{ResolveType()}}
+{\footnotesize\ttfamily virtual Type Def\+Can\+Api.\+Areas.\+Help\+Page.\+Help\+Page\+Sample\+Generator.\+Resolve\+Type (\begin{DoxyParamCaption}\item[{Api\+Description}]{api,  }\item[{string}]{controller\+Name,  }\item[{string}]{action\+Name,  }\item[{I\+Enumerable$<$ string $>$}]{parameter\+Names,  }\item[{\mbox{\hyperlink{namespace_def_can_api_1_1_areas_1_1_help_page_a421c21d871860512d0b8c01c90628752}{Sample\+Direction}}}]{sample\+Direction,  }\item[{out Collection$<$ Media\+Type\+Formatter $>$}]{formatters }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Resolves the type of the action parameter or return value when Http\+Request\+Message or Http\+Response\+Message is used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em api} & The Api\+Description.\\
+\hline
+{\em controller\+Name} & Name of the controller.\\
+\hline
+{\em action\+Name} & Name of the action.\\
+\hline
+{\em parameter\+Names} & The parameter names.\\
+\hline
+{\em sample\+Direction} & The value indicating whether the sample is for a request or a response.\\
+\hline
+{\em formatters} & The formatters.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a35b9b050a7bc211f3f4265acd7e27f3b}\label{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a35b9b050a7bc211f3f4265acd7e27f3b}} 
+\index{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}!WriteSampleObjectUsingFormatter@{WriteSampleObjectUsingFormatter}}
+\index{WriteSampleObjectUsingFormatter@{WriteSampleObjectUsingFormatter}!DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}}
+\doxysubsubsection{\texorpdfstring{WriteSampleObjectUsingFormatter()}{WriteSampleObjectUsingFormatter()}}
+{\footnotesize\ttfamily virtual object Def\+Can\+Api.\+Areas.\+Help\+Page.\+Help\+Page\+Sample\+Generator.\+Write\+Sample\+Object\+Using\+Formatter (\begin{DoxyParamCaption}\item[{Media\+Type\+Formatter}]{formatter,  }\item[{object}]{value,  }\item[{Type}]{type,  }\item[{Media\+Type\+Header\+Value}]{media\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Writes the sample object using formatter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em formatter} & The formatter.\\
+\hline
+{\em value} & The value.\\
+\hline
+{\em type} & The type.\\
+\hline
+{\em media\+Type} & Type of the media.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a4a2bf8f67af352deb9e0347add8ddfc4}\label{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a4a2bf8f67af352deb9e0347add8ddfc4}} 
+\index{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}!ActionSamples@{ActionSamples}}
+\index{ActionSamples@{ActionSamples}!DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}}
+\doxysubsubsection{\texorpdfstring{ActionSamples}{ActionSamples}}
+{\footnotesize\ttfamily I\+Dictionary$<$\mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_key}{Help\+Page\+Sample\+Key}}, object$>$ Def\+Can\+Api.\+Areas.\+Help\+Page.\+Help\+Page\+Sample\+Generator.\+Action\+Samples\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets the objects that are used directly as samples for certain actions. 
+
+\mbox{\Hypertarget{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_ae0af09c1304a93dd21c029a0c1365909}\label{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_ae0af09c1304a93dd21c029a0c1365909}} 
+\index{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}!ActualHttpMessageTypes@{ActualHttpMessageTypes}}
+\index{ActualHttpMessageTypes@{ActualHttpMessageTypes}!DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}}
+\doxysubsubsection{\texorpdfstring{ActualHttpMessageTypes}{ActualHttpMessageTypes}}
+{\footnotesize\ttfamily I\+Dictionary$<$\mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_key}{Help\+Page\+Sample\+Key}}, Type$>$ Def\+Can\+Api.\+Areas.\+Help\+Page.\+Help\+Page\+Sample\+Generator.\+Actual\+Http\+Message\+Types\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets C\+LR types that are used as the content of Http\+Request\+Message or Http\+Response\+Message. 
+
+\mbox{\Hypertarget{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_abbd08cb38fb8619c61ddfd52db2a0f8d}\label{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_abbd08cb38fb8619c61ddfd52db2a0f8d}} 
+\index{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}!SampleObjectFactories@{SampleObjectFactories}}
+\index{SampleObjectFactories@{SampleObjectFactories}!DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}}
+\doxysubsubsection{\texorpdfstring{SampleObjectFactories}{SampleObjectFactories}}
+{\footnotesize\ttfamily I\+List$<$Func$<$\mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator}{Help\+Page\+Sample\+Generator}}, Type, object$>$ $>$ Def\+Can\+Api.\+Areas.\+Help\+Page.\+Help\+Page\+Sample\+Generator.\+Sample\+Object\+Factories\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets factories for the objects that the supported formatters will serialize as samples. Processed in order, stopping when the factory successfully returns a non-\/ object. 
+
+Collection includes just \mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_object_generator_ae25991b97330d75538f9afbd3ab9fee2}{Object\+Generator.\+Generate\+Object(\+Type)}} initially. Use 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_abbd08cb38fb8619c61ddfd52db2a0f8d}{SampleObjectFactories}}.Insert(0, func)}
+\end{DoxyCode}
+ to provide an override and 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_abbd08cb38fb8619c61ddfd52db2a0f8d}{SampleObjectFactories}}.Add(func)}
+\end{DoxyCode}
+ to provide a fallback.\mbox{\Hypertarget{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a2e1aad2fe0429ff435860f7b11a964fa}\label{class_def_can_api_1_1_areas_1_1_help_page_1_1_help_page_sample_generator_a2e1aad2fe0429ff435860f7b11a964fa}} 
+\index{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}!SampleObjects@{SampleObjects}}
+\index{SampleObjects@{SampleObjects}!DefCanApi.Areas.HelpPage.HelpPageSampleGenerator@{DefCanApi.Areas.HelpPage.HelpPageSampleGenerator}}
+\doxysubsubsection{\texorpdfstring{SampleObjects}{SampleObjects}}
+{\footnotesize\ttfamily I\+Dictionary$<$Type, object$>$ Def\+Can\+Api.\+Areas.\+Help\+Page.\+Help\+Page\+Sample\+Generator.\+Sample\+Objects\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets the objects that are serialized as samples by the supported formatters. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/dorai/\+Desktop/\+Def\+Can\+Plus\+Ultra/src/\+Areas/\+Help\+Page/\+Sample\+Generation/\mbox{\hyperlink{_help_page_sample_generator_8cs}{Help\+Page\+Sample\+Generator.\+cs}}\end{DoxyCompactItemize}
